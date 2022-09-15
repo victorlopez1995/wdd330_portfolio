@@ -49,6 +49,9 @@ ol, ul {
     margin: 5px 0px;
     margin-left: 2.5rem;   
 }
+li{
+    padding: 0.3rem;
+}
 a{
     color: #96031A;
     text-decoration: none;
