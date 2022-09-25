@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio week 2</title>
+    <meta name="description" content="Assignment portal for Victor Lopez in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <script src="js/date.js" defer></script>
+</head>
+<body>
+    <header>
+        <img alt="my personal photo" src="images/my-page-image.jpg">
+        <h1>Victor M. Lopez</h1>
+    </header>
+    <main>
+        <h2>WDD 330: Portfolio - Week 2</h2>
+            <h3>Team Activity</h3>
+            <ul>
+                <li><a href="teamActivity/index.html">Using JavaScript</a></li>
+            </ul>
+            <h3>Notes-Exercises</h3>
+            <p>It is the principal information that I didn't know about JavaScript and its resources:</p>
+            <ul>
+                <li>If a variable defined as "const" has a non-primitive data type, it can change its value.</li>
+                <li>"Symbol" is a kind of variable used to create unique "values" and is a  primitive value.</li>
+                <li>You can check if a "value" is a number with the following method: "Number.isFinite(myVariable)".</li>
+                <li>To convert a String to a number with "Number('myNumber')", and a number to a string with "String(3)".</li>
+                <li>Principal methods with arrays that I need to learn:
+                    <ul>
+                        <li>array.length (we can mutate this value).</li>
+                        <li>array.pop(): remove last item and return it.</li>
+                        <li>array.shift(): remove first element.</li>
+                        <li>array.push('element'): append a new element to the end, and return the new length.</li>
+                        <li>array.unshift('element'): append a new element to the beginning.</li>
+                        <li>array.concat(anotherArray): merge an array with others. This creates a new array.</li>
+                        <li>The "spread" operator (...) can be used to merge the elements of two arrays.</li>
+                        <li>array.join(): turn the array into a string with all the items separated by commas.</li>
+                        <li>array.reverse(): reverse the array.</li>
+                        <li>array,sort(): sort the array.</li>
+                        <li>array.indexOf('element'): return the index of the element.</li>
+                        <li>array.includes('element'): check if the element is in the array</li>
+                    </ul>
+                </li>
+                <li>The ternary operator is used to validate a condition: "condition ? code to run if the condition is true : 
+                    code to run if the condition is false;</li>
+            </ul>
+            <h3>Questions</h3>
+            <ul>
+                <li>How and when can I use the "symbol" variable?</li>
+                <li>What is the function of temporary variable?</li>
+            </ul>
+    </main>
+    <footer>
+        <p >
+            &copy; <span id="currentyear"></span> .:|:. Victor M. Lopez .:|:. Colombia 
+        </p>
+        <p>
+            Last Updated: <span id="currentdate"></span>
+        </p>
+    </footer>
+</body>
+</html>
