@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio week 3</title>
+    <meta name="description" content="Assignment portal for Victor Lopez in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <script src="js/date.js" defer></script>
+</head>
+<body>
+    <header>
+        <img alt="my personal photo" src="images/my-page-image.jpg">
+        <h1>Victor M. Lopez</h1>
+    </header>
+    <main>
+        <h2>WDD 330: Portfolio - Week #</h2>
+            <h3>Team Activity</h3>
+            <ul>
+                <li><a href="teamActivity/index-START.html">Methods in Arrays</a></li>
+            </ul>
+            <h3>Notes-Exercises</h3>
+            <ul>
+                <li><a href="examples/envents.html"></a>How to use events</li>
+                <li>"This" helps us to access the stored information in the object (this.property).</li>
+                <li>Objects
+                    <ul>
+                        <li>Ways to create an object: <br>
+                            const myObject={}; <br>
+                            const myObject= new Object();</li>
+                        <li>You can use JavaScript code in the name and the value of the property.</li>
+                        <li>Check if properties or methods exist: <br>
+                            myObject.hasOwnProperty(property) <br>
+                            Object.keys(myObject)->return an array of all the keys. <br>
+                            Object.values(myObject)-> return an array of all the values. <br>
+                            Object.entries(myObject)->return an array of key-value pairs</li>
+                        <li>Adding properties: myObject.property="value".</li>
+                        <li>Removing properties: delete myObject.property.</li>
+                        <li>The date object: const today = new Date(). 
+                            principal methods:
+                            <ul>
+                                <li>myDate.getDay(); -> integer of the day of the week.</li>
+                                <li>myDate.getDate();-> Day of the month.</li>
+                                <li>myDate.getMonth();-> get the month (0-11).</li>
+                                <li>myDate.getFullYear();</li>
+                                <li>myDate.getTime(); get the date in timestamp.</li>
+                                <li>myDAte.getTimezoneOffset();-> difference, in minutes, between the local time on the computer and UTC.</li>
+                                <li>(you can use "set" instead of "get" with the methods above)</li>
+                            </ul>
+                        </li>
+                        <li>"Document Object Model" (DOM) allows you to access all elements on a web page. 
+                            This represents an HTML document as a network of connected nodes. <br>
+                            Access to an element:
+                            <ul>
+                                <li>document.getElementByTagName(element);</li>
+                                <li>document.getElementByClassName(element);</li>
+                                <li>document.querySelector('element');</li>
+                                <li>document.querySelectorAll('element');</li>
+                            </ul>
+                            Gettings and setting attributes:
+                            <ul>
+                                <li>myElement.getAttribute('attribute');</li>
+                                <li>myElement.setAtrtibute('attribute', 'new value');</li>
+                            </ul>
+                            Create an Element:
+                            <ul>
+                                <li>document.createElement(element);</li>
+                                <li>document.textContent = ' ';</li>
+                            </ul>
+                            Adding elements to the page: parent.appendChild (child); <br>
+                            innerHTML: return the string of an element.
+                        </li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li></li>
+            </ul>
+            <h3>Questions</h3>
+            <ul>
+                <li></li>
+            </ul>
+    </main>
+    <footer>
+        <p >
+            &copy; <span id="currentyear"></span> .:|:. Victor M. Lopez .:|:. Colombia 
+        </p>
+        <p>
+            Last Updated: <span id="currentdate"></span>
+        </p>
+    </footer>
+</body>
+</html>
