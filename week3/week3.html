@@ -27,7 +27,7 @@
             </ul>
             <h3>Notes-Exercises</h3>
             <ul>
-                <li><a href="examples/envents.html"></a>How to use events</li>
+                <li><a href="examples/envents.html">How to use events</a></li>
                 <li>"This" helps us to access the stored information in the object (this.property).</li>
                 <li>Objects
                     <ul>
@@ -54,36 +54,57 @@
                                 <li>(you can use "set" instead of "get" with the methods above)</li>
                             </ul>
                         </li>
-                        <li>"Document Object Model" (DOM) allows you to access all elements on a web page. 
-                            This represents an HTML document as a network of connected nodes. <br>
-                            Access to an element:
-                            <ul>
-                                <li>document.getElementByTagName(element);</li>
-                                <li>document.getElementByClassName(element);</li>
-                                <li>document.querySelector('element');</li>
-                                <li>document.querySelectorAll('element');</li>
-                            </ul>
-                            Gettings and setting attributes:
-                            <ul>
-                                <li>myElement.getAttribute('attribute');</li>
-                                <li>myElement.setAtrtibute('attribute', 'new value');</li>
-                            </ul>
-                            Create an Element:
-                            <ul>
-                                <li>document.createElement(element);</li>
-                                <li>document.textContent = ' ';</li>
-                            </ul>
-                            Adding elements to the page: parent.appendChild (child); <br>
-                            innerHTML: return the string of an element.
-                        </li>
-                        <li></li>
                     </ul>
                 </li>
-                <li></li>
+                <li>"Document Object Model" (DOM) allows you to access all elements on a web page. 
+                            This represents an HTML document as a network of connected nodes. <br>
+                            Access to an element:
+                    <ul>
+                        <li>document.getElementByTagName(element);</li>
+                        <li>document.getElementByClassName(element);</li>
+                        <li>document.querySelector('element');</li>
+                        <li>document.querySelectorAll('element');</li>
+                    </ul>
+                            Gettings and setting attributes:
+                    <ul>
+                        <li>myElement.getAttribute('attribute');</li>
+                        <li>myElement.setAtrtibute('attribute', 'new value');</li>
+                    </ul>
+                            Create an Element:
+                    <ul>
+                        <li>document.createElement(element);</li>
+                        <li>document.textContent = ' ';</li>
+                    </ul>
+                            Adding elements to the page: parent.appendChild (child); <br>
+                            innerHTML: return the string of an element.
+                </li>
+                <li>Event: events provide the link between the web page and user interactions.<br>
+                            Event listener: alert when something happens, or an event happens.<br>
+                            document.body.addEventListener("click", doSomething);<br>
+                            the "addEventListener" method can also be called without a node and applied to a global object.<br>
+                            The target property returns a reference to the node that fired that event.<br>
+                            Get coordinates of an event:
+                    <ul>
+                        <li>screenx, screeny</li>
+                        <li>clientx, clienty</li>
+                        <li>pagex, pagey</li>
+                    </ul>
+                    <li>List of principal events:
+                        <ul>
+                            <li>Mouse events: click, mousedown, mouseup, dblclick, mouseover, mouseout, mousemove.</li>
+                            <li>Keyboard events: keydown, keypress, keyup, shiftkey, ctrlkey, altkey, metakey.</li>
+                            <li>Touch events: touchstart, touchend, touchmove,touchenter, touchleave, touchcancel, touches</li>
+                        </ul>
+                        Remove event listeners: removeEventListener();
+                        Stop default behavior: preventDefault();
+                        Stop the bubbling phases: event.stopPropagation();
+                    </li>
+                </li>
             </ul>
+
             <h3>Questions</h3>
             <ul>
-                <li></li>
+                <li>What is the difference between an array, a live node list, and a live collection?</li>
             </ul>
     </main>
     <footer>
