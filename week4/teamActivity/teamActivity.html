@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <div class="board">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="reset">
+        <button id="reset">Reset</button>
+    </div>
+    
+
+    <script>
+        let player = 'X';
+        const board = document.querySelector('.board');
+        board.addEventListener('click',activate);
+        function activate(event){          
+            event.target.innerHTML = player; 
+            if (player == 'X') {player = 'O'}
+            else {player = 'X'} 
+        }
+        //Button event
+        const resetButton = document.querySelector('#reset');
+        resetButton.addEventListener('click',reset);
+        function reset () {
+            location.reload(true);
+        }
+    </script>
+</body>
+</html>

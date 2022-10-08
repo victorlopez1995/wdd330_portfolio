@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio week 4</title>
+    <meta name="description" content="Assignment portal for Victor Lopez in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <script src="../js/date.js" defer></script>
+</head>
+<body>
+    <header>
+        <img alt="my personal photo" src="../images/my-page-image.jpg">
+        <h1>Victor M. Lopez</h1>
+    </header>
+    <main>
+        <h2>WDD 330: Portfolio - Week 4</h2>
+            <h3>Team Activity</h3>
+            <ul>
+                <li><a href="teamActivity/teamActivity.html">Tic-Tac-Toe</a></li>
+            </ul>
+            <h3>Notes-Exercises</h3>
+            <ul>
+                <li><a href="examples/hero.html">Hero Form</a></li>
+                <li><a href="examples/search.html">Search events</a></li>
+                <li>Forms: Method to interact with a webpage (<form> element)
+                    <ul>
+                        <li>document.forms : return an HTML collection of all the forms in the document.</li>
+                        <li>how to get a form:
+                            <ul>
+                                <li>const form = document.forms[0];</li>
+                                <li>const form = document.getElementByTagName('form')[0];</li>
+                            </ul>
+                        </li>
+                        <li>We can use the name attribute to identify a form: const Form = document.forms.formName; or const Form = document.forms['formName'];</li>
+                        <li>Access to form controls:
+                            <ul>
+                                <li>const control = form.controlName;</li>
+                                <li>const [control1, control2, ...] = form.elements</li>
+                            </ul>
+                        </li>
+                        <li>form.submit(): submit a file automatically</li>
+                        <li>form.reset(): reset all the form controls back to their initial values</li>
+                        <li>form.action(): set the action attribute of a form, it's sent to a different URL to be processed on the server.</li>
+                        <li>form events:
+                            <ul>
+                                <li>focus: when an element is focused</li>
+                                <li>blur: moves away from the form element</li>
+                                <li>change: moves the focus away from the form element after changing it</li>
+                                <li>submit: When the form is submitted.</li>
+                            </ul>
+                        </li>
+                        <li>Input fields: text, password, checkbox, radio, hidden, and file.</li>
+                    </ul>
+                </li>
+                <li>Object-Oriented Programming in JavaScript
+                    <ul>
+                        <li>Encapsulation: The inner workings are kept hidden inside the object, and only the essential functionalities are exposed.</li>
+                        <li>Polymorphism: The same process can be used for different objects.</li>
+                        <li>Inheritance: inherit all properties and methods.</li>
+                        <li>Constructors functions: <br>
+                            const myObject: function (parameter){ <br>
+                                this.attribute = value; <br>
+                                this.method = function(){ <br>
+                                    code <br>
+                                }}
+                                
+                        </li>
+                        <li>miObject.contructor: returns the constructor function that created it.</li>
+                        <li>Static Methods: they can be used just for the class, not for the instances.</li>
+                        <li>Prototype: add properties and methods to the class.</li>
+                        <li>Monkey-patching: add methods to the prototype of JavaScript's built objects.</li>
+                        <li>Create object from another object: const newObject: Object.create(myObject);</li>
+                        <li>Arrow functions should be used when anonymous functions are required in callbacks (and they require less typing as well).</li>
+                        <li>Composition over inheritance: Creating small objects that describe a single task or behavior and using them as the building blocks for more complex objects.</li>
+                    </ul>
+                </li>
+                <li>Modern JavaScript developments
+                    <ul>
+                        <li>Libraries: a piece of code that provides several methods that make it easier to achieve common tasks.</li>
+                        <li>JQuery: support for older browsers. $ symbol alias for the global jQuery object.</li>
+                        <li>Modular JavaScript: A module is a self-contained piece of code that provide functions and methods that can then be used in other files and by other modules.
+                            <ul>
+                                <li>export const VAR = "value";</li>
+                                <li>import {VAR} from 'file.js';</li>
+                            </ul>
+                        </li>
+                        <li>Default export: single variable function or class in a Module that can be imported without having to be explicitly named.</li>
+                        <li>MVC Frameworks:
+                            <ul>
+                                <li>Models are objects that implement the functionality for creating, reading, updating, and deleting specific pieces of information about the application.</li>
+                                <li>Views provide a visual representation of the model.</li>
+                                <li>Controllers link models and views together by communicating between them. </li>
+                            </ul>
+                        </li>
+                        <li>Templates: Templating languages allow HTML to be separated from the JavaScript program, making maintenance easier because they’re no longer tightly coupled.</li>
+                        <li>Package Managers: A package is just a directory with one or more files of code, as well as a package.json file that contains information about the code in the package.</li>
+                        <li>Webpack is a module bundler that takes all the JavaScript files used in your project and bundles them all together in one file.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Questions</h3>
+            <ul>
+                <li>What is the advantage of mixins and factory functions?</li>
+            </ul>
+    </main>
+    <footer>
+        <p >
+            &copy; <span id="currentyear"></span> .:|:. Victor M. Lopez .:|:. Colombia 
+        </p>
+        <p>
+            Last Updated: <span id="currentdate"></span>
+        </p>
+    </footer>
+</body>
+</html>
