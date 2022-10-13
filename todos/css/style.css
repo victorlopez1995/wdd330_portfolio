@@ -1,0 +1,16 @@
+main div.listcontainer ul.list li button:nth-of-type(1) span:nth-last-of-type(1){
+    display: none;
+}
+main div.listcontainer ul.list li button:nth-of-type(1) span:nth-last-of-type(2){
+    display: block;
+   }
+main div.listcontainer ul.list li button:nth-of-type(1).checked span:nth-last-of-type(1){
+    display: block;
+}
+main div.listcontainer ul.list li button:nth-of-type(1).checked span:nth-last-of-type(2){
+    display: none;
+}
+
+main div.listcontainer ul.list li.checked{
+    text-decoration: line-through;
+}
