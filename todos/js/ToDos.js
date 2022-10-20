@@ -1,32 +1,33 @@
+import * as ls from './ls.js';
+import { createOneTask, addToArray } from './utilities.js';
+
 const input = document.querySelector('input');
 const list = document.querySelector('ul');
 const button = document.querySelector('button');
+const myKey = "allTask";
 
-button.addEventListener('click', function() {
-    const mytask = input.value;
-    if (mytask !== "" ){
-        input.value = '';
-        const myli = document.createElement('li');
-        const mycheckbutton = document.createElement('button');
-        const myuncheck = document.createElement('span');
-        const mycheck = document.createElement('span');
-        const mybutton = document.createElement('button');
-        mycheck.textContent = "☒";
-        myuncheck.textContent = "☐";
-        mycheckbutton.appendChild(myuncheck);
-        mycheckbutton.appendChild(mycheck);
-        myli.textContent = mytask;
-        mybutton.textContent = '❌';
-        myli.appendChild(mycheckbutton);
-        myli.appendChild(mybutton);
-        list.appendChild(myli);
-        mybutton.addEventListener('click', ()=>{
-            return myli.remove();
-        })
-        mycheckbutton.addEventListener('click', function(){
-            mycheckbutton.classList.toggle("checked");
-            myli.classList.toggle("checked");
-        })
-    }
-input.focus()
-})
+let allTask =  ls.getFromLs(myKey);
+
+ls.renderList(allTask, list, createOneTask, myKey);
+
+AddNewTask(input, list, button, allTask, ls.setToLs, myKey);
+
+
+function AddNewTask(myInput, parent, myButton, taskArray, callback,myKey){
+    myButton.addEventListener('click', function(){
+        let mytask = myInput.value;
+        myInput.value = "";
+        myInput.focus();
+        let taskAdded = createOneTask(mytask ,parent, taskArray,callback, myKey);
+        allTask = addToArray(allTask,taskAdded);
+        ls.setToLs(myKey,allTask);
+    });
+}
+
+function removeTask(taskArray, myKey, mytask, li){
+    console.log(taskArray);
+    const myIndex = taskArray.indexOf(mytask);
+    taskArray.splice(myIndex, 1);
+    ls.setToLs(myKey,taskArray);
+    return li.remove();
+}
