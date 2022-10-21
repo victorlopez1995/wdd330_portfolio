@@ -1,6 +1,6 @@
 import * as ls from './ls.js';
 
-export function createOneTask(taskInput, parent, taskArray, callback, mykey){
+export function createOneTask(taskInput, parent, taskArray, callback, mykey, count){
     const mytask = taskInput;
     if (mytask !== "" ){
 
@@ -24,18 +24,20 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey){
             const myIndex = getIndex(taskArray, mytask);
             taskArray.splice(myIndex, 1);
             callback(mykey,taskArray);
+
+            count.innerHTML = countChecked(taskArray);
             return myli.remove();
 
         })
 
         mycheckbutton.addEventListener('click', function(){
+            console.log (count);
             mycheckbutton.classList.toggle("checked");
             myli.classList.toggle("checked");
-            console.log(myli);
             const myIndex = getIndex(taskArray, mytask);
             taskArray[myIndex].completed = !taskArray[myIndex].completed;
             callback(mykey,taskArray);
-
+            count.innerHTML = countChecked(taskArray);
         })
     }
     return mytask;
@@ -72,4 +74,15 @@ export function validateChecked(array, Arrayelements){
             }
         })
     }
+}
+export function countChecked(array){
+    let count = 0;
+    if (!(array == null)){
+        array.forEach(element =>{
+            if (!element.completed){
+                count ++;
+            }
+        })
+    }
+    return count;
 }
