@@ -18,12 +18,10 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey){
         myli.appendChild(mycheckbutton);
         myli.appendChild(mybutton);
         parent.appendChild(myli);
+
         mybutton.addEventListener('click', () =>{
 
-            const target = taskArray.filter(function(item){
-                return item.content == mytask;
-            })
-            const myIndex = taskArray.indexOf(target[0]);
+            const myIndex = getIndex(taskArray, mytask);
             taskArray.splice(myIndex, 1);
             callback(mykey,taskArray);
             return myli.remove();
@@ -31,32 +29,14 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey){
         })
 
         mycheckbutton.addEventListener('click', function(){
-            // mycheckbutton.classList.toggle("checked");
-            // myli.classList.toggle("checked");
-            const target = taskArray.filter(function(item){
-                return item.content == mytask;
-            })
-            const myIndex = taskArray.indexOf(target[0]);
+            mycheckbutton.classList.toggle("checked");
+            myli.classList.toggle("checked");
+            console.log(myli);
+            const myIndex = getIndex(taskArray, mytask);
             taskArray[myIndex].completed = !taskArray[myIndex].completed;
             callback(mykey,taskArray);
 
         })
-        // const target = taskArray.filter(function(item){
-        //     return item.content == mytask;
-        // })
-        // console.log(target);
-        // const myIndex = taskArray.indexOf(target[0]);
-        // console.log(myIndex);
-        // taskArray[myIndex].completed = !taskArray[myIndex].completed;
-        // callback(mykey,taskArray);
-        // if (taskArray[myIndex].completed){
-        //     mycheckbutton.classList.add("checked");
-        //     myli.classList.add("checked");
-        // }else{
-        //     mycheckbutton.classList.remove("checked");
-        //     myli.classList.remove("checked");
-        // }
-
     }
     return mytask;
 }
@@ -72,4 +52,30 @@ export function addToArray(myArray, value){
         }
         );
     return myArray
+}
+
+function getIndex(Array, value){
+    const target = Array.filter(function(item){
+        return item.content == value;
+    })
+    const myIndex = Array.indexOf(target[0]);
+    return myIndex;
+}
+
+export function validateChecked(array, Arrayelements){
+    array.forEach(element =>{
+        if (element.completed){
+            let myIndex = getIndex(array, element.content);
+            Arrayelements[myIndex].classList.add("checked");
+            Arrayelements[myIndex].children[0].classList.add("checked");
+        }
+    })
+}
+
+export function checkAll(Arrayelements){
+    let realArray = Array.from(Arrayelements);
+    realArray.forEach(element => {
+        element.classList.add("checked");
+        element.children[0].classList.add("checked");
+    })
 }
