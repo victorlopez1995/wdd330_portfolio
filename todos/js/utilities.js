@@ -63,19 +63,13 @@ function getIndex(Array, value){
 }
 
 export function validateChecked(array, Arrayelements){
-    array.forEach(element =>{
-        if (element.completed){
-            let myIndex = getIndex(array, element.content);
-            Arrayelements[myIndex].classList.add("checked");
-            Arrayelements[myIndex].children[0].classList.add("checked");
-        }
-    })
-}
-
-export function checkAll(Arrayelements){
-    let realArray = Array.from(Arrayelements);
-    realArray.forEach(element => {
-        element.classList.add("checked");
-        element.children[0].classList.add("checked");
-    })
+    if (!(array == null)){
+        array.forEach(element =>{
+            if (element.completed){
+                let myIndex = getIndex(array, element.content);
+                Arrayelements[myIndex].classList.add("checked");
+                Arrayelements[myIndex].children[0].classList.add("checked");
+            }
+        })
+    }
 }

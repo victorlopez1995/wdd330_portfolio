@@ -14,3 +14,7 @@ main div.listcontainer ul.list li button:nth-of-type(1).checked span:nth-last-of
 main div.listcontainer ul.list li.checked{
     text-decoration: line-through;
 }
+
+.hidden{
+    display: none;
+}
