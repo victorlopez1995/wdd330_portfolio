@@ -1,7 +1,6 @@
-import * as ls from './ls.js';
-
 export function createOneTask(taskInput, parent, taskArray, callback, mykey, count){
     const mytask = taskInput;
+    let updatedArray;
     if (mytask !== "" ){
 
         const myli = document.createElement('li');
@@ -23,28 +22,31 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
         myli.appendChild(mybutton);
         parent.appendChild(myli);
 
+        updatedArray = addToArray(taskArray, mytask);
+        // console.log(updatedArray);
+        const newObject = updatedArray[updatedArray.length-1];
+
         mybutton.addEventListener('click', () =>{
 
-            const myIndex = getIndex(taskArray, mytask);
-            taskArray.splice(myIndex, 1);
-            callback(mykey,taskArray);
-
-            count.innerHTML = countChecked(taskArray);
+            const myIndex = getIndex(updatedArray, newObject.id);
+            updatedArray.splice(myIndex, 1);
+            callback(mykey,updatedArray);
+            count.innerHTML = countChecked(updatedArray);
             return myli.remove();
 
         })
 
-        mycheckbutton.addEventListener('click', function(){
-            console.log (count);
+        mycheckbutton.addEventListener('click', function(event){
             mycheckbutton.classList.toggle("checked");
             myli.classList.toggle("checked");
-            const myIndex = getIndex(taskArray, mytask);
-            taskArray[myIndex].completed = !taskArray[myIndex].completed;
-            callback(mykey,taskArray);
-            count.innerHTML = countChecked(taskArray);
+            console.log(event.Target);
+            const myIndex = getIndex(updatedArray, newObject.id);
+            updatedArray[myIndex].completed = !updatedArray[myIndex].completed;
+            callback(mykey,updatedArray);
+            count.innerHTML = countChecked(updatedArray);
         })
     }
-    return mytask;
+    return updatedArray;
 }
 
 export function addToArray(myArray, value){
@@ -62,7 +64,7 @@ export function addToArray(myArray, value){
 
 function getIndex(Array, value){
     const target = Array.filter(function(item){
-        return item.content == value;
+        return item.id == value;
     })
     const myIndex = Array.indexOf(target[0]);
     return myIndex;
@@ -72,7 +74,7 @@ export function validateChecked(array, Arrayelements){
     if (!(array == null)){
         array.forEach(element =>{
             if (element.completed){
-                let myIndex = getIndex(array, element.content);
+                let myIndex = getIndex(array, element.id);
                 Arrayelements[myIndex].classList.add("checked");
                 Arrayelements[myIndex].children[0].classList.add("checked");
             }

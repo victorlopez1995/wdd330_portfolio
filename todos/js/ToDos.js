@@ -35,9 +35,11 @@ function AddNewTask(myInput, parent, myButton, taskArray, callback,myKey, count)
         let mytask = myInput.value;
         myInput.value = "";
         myInput.focus();
-        let taskAdded = createOneTask(mytask ,parent, taskArray,callback, myKey, count);
-        allTask = addToArray(allTask,taskAdded);
-        ls.setToLs(myKey,allTask);
+        console.log(taskArray);
+        taskArray = createOneTask(mytask ,parent, taskArray,callback, myKey, count);
+        // allTask = addToArray(allTask,taskArray);
+        console.log(taskArray);
+        ls.setToLs(myKey,taskArray);
         countLeft.innerHTML = countChecked(taskArray);
     });
 }
