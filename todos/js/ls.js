@@ -1,18 +1,10 @@
 
 export function setToLs(key, value){
-    if (key == "allTask"){ 
-        localStorage.setItem(key, JSON.stringify(value));
-    }else if (key == "countKey"){
-        localStorage.setItem(key, value);
-    }
+    localStorage.setItem(key, JSON.stringify(value));
 }
 
 export function getFromLs(key){
-    if (key == "allTask"){ 
-        return JSON.parse(localStorage.getItem(key));
-    } else if (key == "countKey") {
-        return localStorage.getItem(key);
-    }
+    return JSON.parse(localStorage.getItem(key));
 }
 
 export function renderList(taskArray,parent,callback, myKey, count){

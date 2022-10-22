@@ -5,6 +5,7 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
     if (mytask !== "" ){
 
         const myli = document.createElement('li');
+        const myp = document.createElement('p');
         const mycheckbutton = document.createElement('button');
         const myuncheck = document.createElement('span');
         const mycheck = document.createElement('span');
@@ -13,9 +14,12 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
         myuncheck.textContent = "☐";
         mycheckbutton.appendChild(myuncheck);
         mycheckbutton.appendChild(mycheck);
-        myli.textContent = mytask;
+        myp.textContent = mytask;
+        
         mybutton.textContent = '❌';
         myli.appendChild(mycheckbutton);
+        // myli.textContent = mytask;
+        myli.appendChild(myp);
         myli.appendChild(mybutton);
         parent.appendChild(myli);
 

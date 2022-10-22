@@ -24,9 +24,9 @@ countLeft.innerHTML = countChecked(allTask);
 
 AddNewTask(input, list, button, allTask, ls.setToLs, myKey, countLeft);
 
-filter(elementList, buttonActive, true, false);
-filter(elementList, buttonComplete, false, true);
-filter(elementList, buttonAll, false, false);
+filter(elementList, buttonActive, true, false, buttonAll, buttonComplete);
+filter(elementList, buttonComplete, false, true, buttonActive, buttonAll);
+filter(elementList, buttonAll, false, false, buttonActive, buttonComplete);
 
 
 
@@ -42,8 +42,11 @@ function AddNewTask(myInput, parent, myButton, taskArray, callback,myKey, count)
     });
 }
 
-function filter(Elements, button, displayAction1, displayAction2){
-    button.addEventListener("click", function(){
+function filter(Elements, button, displayAction1, displayAction2, cleanbutton1, cleanbutton2){
+    button.addEventListener("click", function(event){
+        event.target.classList.add('filterColor');
+        cleanbutton1.classList.remove('filterColor');
+        cleanbutton2.classList.remove('filterColor');
         let arrayElements = Array.from(Elements);
         arrayElements.forEach(element =>{
             if ((element.classList.contains("checked") && displayAction1) || (!element.classList.contains("checked")&& displayAction2)){
@@ -53,6 +56,6 @@ function filter(Elements, button, displayAction1, displayAction2){
                 // element.style.display = displayAction2;
                 element.classList.remove("hidden");
             }
-        })
+        }) 
     })
 }
