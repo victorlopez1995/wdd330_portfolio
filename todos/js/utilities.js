@@ -1,7 +1,7 @@
-export function createOneTask(taskInput, parent, taskArray, callback, mykey, count){
+export function createOneTask(taskInput, parent, taskArray, callback, mykey, count, render, index){
     const mytask = taskInput;
     let updatedArray;
-    if (mytask !== "" ){
+    let newObject;
 
         const myli = document.createElement('li');
         const myp = document.createElement('p');
@@ -22,10 +22,14 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
         myli.appendChild(mybutton);
         parent.appendChild(myli);
 
-        updatedArray = addToArray(taskArray, mytask);
-        // console.log(updatedArray);
-        const newObject = updatedArray[updatedArray.length-1];
-
+        if (render){
+            updatedArray = taskArray;
+            newObject = updatedArray[index]
+        } else {
+            updatedArray = addToArray(taskArray, mytask);
+            newObject = updatedArray[updatedArray.length-1];
+        }
+        
         mybutton.addEventListener('click', () =>{
 
             const myIndex = getIndex(updatedArray, newObject.id);
@@ -36,16 +40,17 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
 
         })
 
-        mycheckbutton.addEventListener('click', function(event){
+        mycheckbutton.addEventListener('click', function(){
             mycheckbutton.classList.toggle("checked");
             myli.classList.toggle("checked");
-            console.log(event.Target);
+            console.log(newObject);
             const myIndex = getIndex(updatedArray, newObject.id);
+            console.log(newObject);
             updatedArray[myIndex].completed = !updatedArray[myIndex].completed;
             callback(mykey,updatedArray);
             count.innerHTML = countChecked(updatedArray);
         })
-    }
+
     return updatedArray;
 }
 

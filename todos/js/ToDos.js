@@ -9,12 +9,11 @@ const buttonActive = document.querySelector('.activeButton');
 const buttonComplete = document.querySelector('.completeButton');
 const countLeft = document.querySelector('span');
 const myKey = "allTask";
-const countKey = "countKey";
 
 
 let allTask =  ls.getFromLs(myKey);
 
-ls.renderList(allTask, list, createOneTask, myKey, countLeft);
+ls.renderList(allTask, list, createOneTask, myKey, countLeft, true);
 
 let elementList = document.getElementsByTagName('li');
 
@@ -22,7 +21,7 @@ validateChecked(allTask, elementList);
 
 countLeft.innerHTML = countChecked(allTask);
 
-AddNewTask(input, list, button, allTask, ls.setToLs, myKey, countLeft);
+AddNewTask(input, list, button, allTask, ls.setToLs, myKey, countLeft, false, 0);
 
 filter(elementList, buttonActive, true, false, buttonAll, buttonComplete);
 filter(elementList, buttonComplete, false, true, buttonActive, buttonAll);
@@ -30,17 +29,19 @@ filter(elementList, buttonAll, false, false, buttonActive, buttonComplete);
 
 
 
-function AddNewTask(myInput, parent, myButton, taskArray, callback,myKey, count){
+function AddNewTask(myInput, parent, myButton, taskArray, callback,myKey, count, render, index){
     myButton.addEventListener('click', function(){
         let mytask = myInput.value;
+        if (!mytask == ""){
         myInput.value = "";
         myInput.focus();
         console.log(taskArray);
-        taskArray = createOneTask(mytask ,parent, taskArray,callback, myKey, count);
+        taskArray = createOneTask(mytask ,parent, taskArray,callback, myKey, count, render, index);
         // allTask = addToArray(allTask,taskArray);
         console.log(taskArray);
         ls.setToLs(myKey,taskArray);
         countLeft.innerHTML = countChecked(taskArray);
+        }
     });
 }
 
