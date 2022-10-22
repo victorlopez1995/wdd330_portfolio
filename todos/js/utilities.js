@@ -1,8 +1,11 @@
+
+// function to create one task in the HTML 
 export function createOneTask(taskInput, parent, taskArray, callback, mykey, count, render, index){
     const mytask = taskInput;
     let updatedArray;
     let newObject;
 
+// create all elements for the task
         const myli = document.createElement('li');
         const myp = document.createElement('p');
         const mycheckbutton = document.createElement('button');
@@ -17,7 +20,6 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
         
         mybutton.textContent = '❌';
         myli.appendChild(mycheckbutton);
-        // myli.textContent = mytask;
         myli.appendChild(myp);
         myli.appendChild(mybutton);
         parent.appendChild(myli);
@@ -30,6 +32,7 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
             newObject = updatedArray[updatedArray.length-1];
         }
         
+// create button to delete the task
         mybutton.addEventListener('click', () =>{
 
             const myIndex = getIndex(updatedArray, newObject.id);
@@ -39,7 +42,7 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
             return myli.remove();
 
         })
-
+// create button to check the task
         mycheckbutton.addEventListener('click', function(){
             mycheckbutton.classList.toggle("checked");
             myli.classList.toggle("checked");
@@ -53,7 +56,7 @@ export function createOneTask(taskInput, parent, taskArray, callback, mykey, cou
 
     return updatedArray;
 }
-
+// Create the element to update the local storage
 export function addToArray(myArray, value){
     if (myArray == null){
         myArray = [];    
@@ -66,7 +69,7 @@ export function addToArray(myArray, value){
         );
     return myArray
 }
-
+// get index with the id from the array in the local storage
 function getIndex(Array, value){
     const target = Array.filter(function(item){
         return item.id == value;
@@ -75,6 +78,7 @@ function getIndex(Array, value){
     return myIndex;
 }
 
+// Validate if the task is checked after render the local storage
 export function validateChecked(array, Arrayelements){
     if (!(array == null)){
         array.forEach(element =>{
@@ -86,6 +90,8 @@ export function validateChecked(array, Arrayelements){
         })
     }
 }
+
+// Count how many elements in the local storage has completed = true
 export function countChecked(array){
     let count = 0;
     if (!(array == null)){
