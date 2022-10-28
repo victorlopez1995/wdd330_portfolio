@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio week 7</title>
+    <meta name="description" content="Assignment portal for Victor Lopez in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <script src="../js/date.js" defer></script>
+</head>
+<body>
+    <header>
+        <img alt="my personal photo" src="../images/my-page-image.jpg">
+        <h1>Victor M. Lopez</h1>
+    </header>
+    <main>
+        <h2>WDD 330: Portfolio - Week 7</h2>
+            <h3>Team Activity</h3>
+            <ul>
+                <li><a href="teamActivity/hiking-complete.html">Great Hikes updated</a></li>
+            </ul>
+            <h3>Notes-Exercises</h3>
+            <ul>
+                <li><a href="examples/todo.html">ToDo list example (send information)</a></li>
+                <li><a href="examples/ajax.html">AJAX (API)</a></li>
+                <li>Further functions: <br>
+                    The fact that functions are first-class objects means they can have properties and methods themselves.
+                    <ul>
+                        <li>length property that returns the number of parameters the function has.-myfunction.lenght-</li>
+                        <li>Call methods <br>
+                            The call() method can be used to set the value of this inside a function to an object that is provided as the first argument.
+                        </li>
+                        <li>Apply Method <br>
+                            The apply() method works in the same way, except the arguments of the function, are provided as an array, even if there is only one argument.
+                        </li>
+                        <li>Custom Properties <br>
+                            There is nothing to stop you adding your own properties to functions in the same way that you can add properties to any object in JavaScript. 
+                        </li>
+                        <li>Memorization <br>
+                            If a function takes some time to compute a return value, we can save the result in a cache property.
+                        </li>
+                        <li>Immediately Invoked Function Expression (IIFE) <br>
+                            An Immediately Invoked Function Expression, or IIFE (pronounced 'iffy'), is an anonymous function that, as the name suggests, is invoked as soon as it's defined.
+                        </li>
+                        <li>Functions that Define and Rewrite Themselves <br>
+                            The dynamic nature of JavaScript means that a function is able to not only call itself, but define itself, and even redefine itself.
+                        </li> 
+                        <li>Init-Time Branching <br>
+                            This enables the functions to work more effectively in the browser, and avoid checking for features every time they’re invoked.
+                        </li>
+                        <li>Recursive Functions <br>
+                            A recursive function is one that invokes itself until a certain condition is met.
+                        </li>
+                        <li>Event-driven Asynchronous Programming <br>
+                            Instead of waiting for an event to occur, a callback can be created that’s invoked when the event happens. This means that the code is able to run out of order, or asynchronously. 
+                        </li>
+                        <li>Promises <br>
+                            represents the future result of an asynchronous operation. <br>
+                            const promise = new Promise( (resolve, reject) => {   <br> 
+                                // initialization code goes here    <br>
+                                if (success) {        <br>
+                                    resolve(value);   <br> 
+                                } else {<br>
+                                    reject(error);    <br>
+                                }});
+                        </li>
+                        <li>Async Functions <br>
+                            These functions are preceded by the async keyword and allow you to write asynchronous code as if it was synchronous. This is achieved by using the await operator before an asynchronous function. This will wrap the return value of the function in a promise that can then be assigned to a variable.
+                        </li>
+                        <li>Closures <br>
+                            A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program. A closure is formed when the inner function is returned by the outer function, maintaining access to any variables declared inside the enclosing function.
+                        </li>
+                        <li>Generators <br>
+                            These are special functions used to produce iterators that maintain the state of a value.
+                        </li>
+                        <li>
+                            Functional Programming <br>
+                            <ul>
+                                <li>Pure Functions: A pure function is a function that adheres to the following rules:
+                                    <ol>
+                                        <li>The return value of a pure function should only depend on the values provided as arguments.</li>
+                                        <li>There are no side-effects. A pure function doesn't change any values or data elsewhere in the program.</li>
+                                        <li>Referential transparency. Given the same arguments, a pure function will always return the same result.</li>
+                                    </ol>
+                                </li>
+                                <li>Higher-Order Functions <br>
+                                    Higher-order functions are functions that accept another function as an argument, or return another function as a result, or both.
+                                </li>
+                                <li>Currying <br>
+                                    A function is said to be curried when not all arguments have been supplied to the function, so it returns another function that retains the arguments already provided, and expects the remaining arguments that were omitted when the original function was called. <br>
+                                    function curry(func,...oldArgs) {<br>
+                                        return function(...newArgs) {   <br>     
+                                            const allArgs = [...oldArgs,...newArgs];  <br>      
+                                            return func(...allArgs);    <br>
+                                        }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>AJAX <br>
+                    Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading.
+                    <ul>
+                        <li>The Fetch API <br>
+                            It has since been superseded by the Fetch API, which is currently a living standard for requesting and sending data asynchronously across a network. <br>
+                            fetch('https://example.com/data') <br>
+                            .then(//code that handles the response) <br>
+                            .catch(// code that runs if the server returns an error) <br>
+                            or <br>
+                            .then((response)=>{ <br>
+                                if(response.ok){ <br>
+                                    return response; <br>
+                                } <br>
+                                throw Error(response.statusText); <br>
+                            }) <br>
+                            .then(response=>//do something with response) <br>
+                            .catch(error=> console.log('there was an error')) <br>
+                        </li>
+                        <li>Properties of response
+                            <ul>
+                                <li>header: header associated with the response</li>
+                                <li>url: URL of resopnse</li>
+                                <li>redirected: Boolean (if the response is a result of redirect</li>
+                                <li>Type</li>
+                            </ul>
+                        </li>
+                        <li>JSON Responses <br>
+                            JSON is probably the most common format for AJAX responses. The json() method is used to deal with these by transforming a stream of JSON data into a promise that resolves to a JavaScript object.
+                        </li>
+                    </ul>
+                </li>    
+            </ul>
+            <h3>Questions</h3>
+            <ul>
+                <li>What is the purpose of "promise" functions?</li>
+            </ul>
+    </main>
+    <footer>
+        <p >
+            &copy; <span id="currentyear"></span> .:|:. Victor M. Lopez .:|:. Colombia 
+        </p>
+        <p>
+            Last Updated: <span id="currentdate"></span>
+        </p>
+    </footer>
+</body>
+</html>
