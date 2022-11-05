@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio week 8</title>
+    <meta name="description" content="Assignment portal for Victor Lopez in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <script src="../js/date.js" defer></script>
+</head>
+<body>
+    <header>
+        <img alt="my personal photo" src="../images/my-page-image.jpg">
+        <h1>Victor M. Lopez</h1>
+    </header>
+    <main>
+        <h2>WDD 330: Portfolio - Week 8</h2>
+            <h3>Team Activity</h3>
+            <ul>
+                <li><a href="teamActivity/teamActivity.html">Star Wars API</a></li>
+            </ul>
+            <h3>Notes-Exercises</h3>
+            <ul>
+                <li><a href="examples/canvas.html">Canvas exercise</a></li>
+                <li>Transforms <br>
+                    The CSS3 transform property lets you translate, rotate, scale, and/or skew any element on the page. We can manipulate an element's appearance using transform functions.
+                    <ul>
+                        <li>Translation <br>
+                            Translation functions allow you to move elements left, right, up, or down.  translated element can only be moved relative to its current position.
+                            If you only want to move an element vertically or horizontally, you can use the translatex or translatey functions respectively
+                            <ul>
+                                <li>Scaling <br>
+                                    The scale(x,y) function scales an element by the defined factors horizontally then vertically. It's also worth remembering that scaling, like translation, has no impact on the document flow. 
+                                </li>
+                                <li>Rotation <br>
+                                    The rotate() function rotates an element around the point of origin by a specified angle value. As with scale, by default the point of origin is the element's center. 
+                                </li>
+                                <li>Skew <br>
+                                    The skew(x,y) function specifies a skew along the x and y axes.
+                                </li>
+                                <li>Changing the Origin of the Transform <br>
+                                    As we hinted at earlier, you can control the origin from which your transforms are applied. This is done using the transform-origin property.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Transitions <br>
+                            Transitions allow the values of CSS properties to change over time, essentially providing simple animations. CSS transitions are declared along with the regular styles on an element. Whenever the target properties change, the browser will apply the transition making the change gradual. Here are the steps to create a simple transition using only CSS:
+                            <ol>
+                                <li>Declare the original state of the element in the default style declaration.</li>
+                                <li>Declare the final state of your transitioned element; for example, a :hover state. </li>
+                                <li>Include the transition functions in your default style declaration using the transition properties</li>
+                            </ol>
+                            The transition-property property defines the CSS properties of the element that should be transitioned, with all for all properties being the default. It is important to include a pre-state and a post-state.
+                            <ul>
+                                <li>The transition-duration Property <br>
+                                    The transition-duration property sets how long the transition will take: the duration of time it takes to go from the default state to the transitioned state. 
+                                </li>
+                                <li>The transition-timing-function Property <br>
+                                    The transition-timing-function lets you control the pace of the transition in even more granular detail. You can also describe your timing function more precisely by defining your own cubic-bezier function. 
+                                </li>
+                                <li>The transition-delay Property <br>
+                                    by using the transition-delay property, it's possible to introduce a delay before the transition begins. 
+
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Animations <br>
+                    CSS animations, unlike transitions, allow you to control each step of an animation via keyframes.
+                    <ul>
+                        <li>Keyframes <br>
+                            To animate an element in CSS, you first create a named animation, then attach it to an element in that element's property declaration block.
+                            There are two keyterms― from and to ―which evaluate to 0% and 100% respectively. These values specify how far along the animation each keyframe is located.
+                            Inside each keyframe include the properties you want to animate, along with the animated values.
+                        </li>
+                        <li>Animation Properties
+                            <ul>
+                                <li>animation-name: This property is used to attach an animation (previously defined using the @keyframes syntax) to an element</li>
+                                <li>animation-duration: The animation-duration property defines the length of time (in seconds or milliseconds) an animation takes to complete one iteration (all the way through, from 0% to 100%):</li>
+                                <li>animation-timing-function: determines how the animation will progress over its duration.</li>
+                                <li>animation-iteration-count: lets you define how many times the animation will play through.</li>
+                                <li>animation-direction: normal, reverse, alternate, alternate-reverse.</li>
+                                <li>animation-delay: The animation-delay property is used to define how many milliseconds or seconds to wait before the browser begins the animation.</li>
+                                <li>animation-fill-mode: The animation-fill-mode property defines what happens before the first animation iteration begins and after the last animation iteration concludes.</li>
+                                <li>animation-play-state: The animation-play-state property defines whether the animation is running or paused.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Canvas <br>
+                    With HTML5's Canvas API, we can draw anything we can imagine, all through JavaScript.
+                    <ul>
+                        <li>Creating a canvas Element <br>
+                            The first step to using canvas is to add a canvas element to the page. The canvas element takes both a width and height attribute, which must also be set.
+                        </li>
+                        <li>Drawing on the Canvas <br>
+                            All drawing on the canvas happens via the Canvas JavaScript API.
+                        </li>
+                        <li>Getting the Context <br>
+                            The context is the place where your drawing is rendered. Currently, there's only wide support for drawing to a two-dimensional context. 
+                            var context = canvas.getContext("2d");
+                            On a real-life painting canvas, you must first saturate your brush with paint before you can begin. In the HTML5 canvas, you must do the same, and we do so with the strokeStyle or fillStyle properties. 
+                        </li>
+                        <li>Drawing a Rectangle to the Canvas  <br>
+                            We can do this by calling the fillRect and strokeRect methods. 
+                        </li>
+                        <li>Drawing Other Shapes by Creating Paths <br>
+                            To draw more interesting shapes, we must first lay out the path of the shape. Paths create a blueprint for your lines, arcs, and shapes, but paths are invisible until you give them a stroke!
+                        </li>
+                        <li>Manipulating Images <br>
+                            Once we've drawn an image on the canvas, we can use the getImageData method from the Canvas API to manipulate the pixels of that image. For example, if we wanted to convert our logo from color to black and white, we can do so using methods in the Canvas API.
+                        </li>
+                    </ul>
+                </li>
+                <li>SVG <br>
+                    SVG stands for Scalable Vector Graphics, a specific file format that allows you to describe vector graphics using XML.
+                </li>
+                <li>Drag and Drop <br>
+                    This API allows us to specify that certain elements are draggable, and then specify what should happen when these draggable elements are dragged over or dropped onto other elements on the page.
+                </li>
+            </ul>
+            <h3>Questions</h3>
+            <ul>
+                <li>How many resources consume an animation on a website?</li>
+            </ul>
+    </main>
+    <footer>
+        <p >
+            &copy; <span id="currentyear"></span> .:|:. Victor M. Lopez .:|:. Colombia 
+        </p>
+        <p>
+            Last Updated: <span id="currentdate"></span>
+        </p>
+    </footer>
+</body>
+</html>
