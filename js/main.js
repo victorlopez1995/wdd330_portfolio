@@ -18,7 +18,9 @@ const links = [
     },{
       label: "Week 7 notes",
       url: "week7/week7.html"
-    }
+    },{label: "Week 8 notes",
+    url: "week8/week8.html"
+  }
   ]
 
 function weeklyList(array, idListName){
