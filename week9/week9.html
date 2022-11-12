@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio week 9</title>
+    <meta name="description" content="Assignment portal for Victor Lopez in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <script src="../js/date.js" defer></script>
+</head>
+<body>
+    <header>
+        <img alt="my personal photo" src="../images/my-page-image.jpg">
+        <h1>Victor M. Lopez</h1>
+    </header>
+    <main>
+        <h2>WDD 330: Portfolio - Week 9</h2>
+            <h3>Team Activity</h3>
+            <ul>
+                <li><a href="teamActivity/index-START.html">DrumKit</a></li>
+            </ul>
+            <h3>Notes-Exercises</h3>
+            <ul>
+                <li><a href="examples/animation/index.html">Animation</a></li>
+                <li><a href="examples/websockets/websocket.html">Websocket</a></li>
+                <li><a href="examples/worker/factors.html">Workers</a></li>
+                <li>The Window Object
+                    <ul>
+                        <li><b>The Browser Object Model</b> <br>
+                            The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen. These properties and methods are made available through the window object. 
+                        </li>
+                        <li><b>Dialogs</b><br>
+                            alert(), confirm() and prompt(). These are not part of the ECMAScript standard, although all major browsers support them as methods of the window object.
+                            <ul>
+                                <li>The window.alert() method will pause the execution of the program and display a message in a dialog box.</li>
+                                <li>The window.confirm() method will stop the execution of the program and display a confirmation dialog that shows the message provided as an argument, and giving the options of OK or Cancel. It returns the boolean values of true if the user clicks OK, and false if the user clicks Cancel.</li>
+                                <li>The window.prompt() method will stop the execution of the program. It displays a dialog that shows a message provided as an argument, as well as an input field that allows the user to enter text.</li>
+                            </ul>
+                        </li>
+                        <li><b>Browser Information</b> <br>
+                            The window object has a navigator property that returns a reference to the Navigator object. The Navigator object contains information about the browser being used. 
+                            <ul>
+                                <li>The window.location property is an object that contains information about the URL of the current page.</li>
+                                <li>The protocol property returns a string describing the protocol used (such as http, https, pop2, ftp etc.).</li>
+                                <li>The host property returns a string describing the domain of the current URL and the port number.</li>
+                                <li>The hostname property returns a string describing the domain of the current URL.</li>
+                                <li>The port property returns a string describing the port number.</li>
+                                <li>The pathname property returns a string of the path that follows the domain.</li>
+                                <li>The reload() method can be used to force a reload of the current page.</li>
+                            </ul>
+                        </li>
+                        <li><b>The Browser History</b>
+                            <ul>
+                                <li>The window.history property can be used to access information about any previously visited pages in the current browser session.</li>
+                                <li>The window.history.length property shows how many pages have been visited before arriving at the current page.</li>
+                                <li>The window.history.go() method can be used to go to a specific page, where 0 is the current page.</li>
+                            </ul>
+                        </li>
+                        <li><b>Controlling Windows</b><br>
+                            A new window can be opened using the window.open() method. The close() method can be used to close a window, assuming you have a reference to it. It is also possible to move a window using the window.moveTo() method. You can resize a window using the window.resizeTo() method. 
+                        </li>
+                        <li><b>Screen Information</b>
+                            <ul>
+                                <li>The window.screen object contains information about the screen the browser is displayed on.</li>
+                                <li>The availHeight and availWidth can be used to find the height and width of the screen, excluding any operating system menus.</li>
+                                <li>The colorDepth property can be used to find the color bit depth of the user's monitor.</li>
+                            </ul>
+                        </li>
+                        <li><b>The Document Object</b><br>
+                            The write() method simply writes a string of text to the page. 
+                        </li>
+                        <li><b>Cookies</b><br>
+                            Cookies are small files that are saved locally on a user's computer. Cookies can be used to sidestep this problem by storing information that can then be retrieved between requests. A restriction of cookies is that they can only be read by a web page from the same domain that set them.Cookies take the form of a text file that contain a list of name/value pairs separated by semicolons.
+                            <ul>
+                                <li><b>Creating Cookies: </b>To create a cookie, you assign it to JavaScript's “cookie jar”, using the document.cookie property: document.cookie = 'name=Superman';</li>
+                                <li><b>Changing Cookie Values: </b>A cookie's value can be changed by reassigning it to document.cookie using the same name but a different value. </li>
+                                <li><b>Reading Cookies: </b>To see the current contents of the cookie jar, simply enter document.cookie</li>
+                                <li><b>Cookie Expiry Dates: </b>Cookies are deleted once a browser session is finished. Cookies can be made persistent ― that is, lasting beyond the browser session ― by adding "; expires=date" to the end of the cookie when it's set, where date is a date value in the UTC String format Day, DD-Mon-YYYY HH:MM:SS GMT.</li>
+                                <li><b>The Path and Domain of Cookies: </b>The path can be changed so that any page in the root directory can read the cookie. It's done by adding the string ; path=/ to the end of the cookie when it is set.</li>
+                                <li><b>Secure Cookies: </b>Adding the string ; secure to the end of a cookie will ensure it's only transmitted over a secure HTTPS network</li>
+                            </ul>
+                        </li>
+                        <li><b>Timing Functions</b><br>
+                            The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing functions at regular intervals.
+                            The window.setTimeout() method accepts a callback to a function as its first parameter and a number of milliseconds as its second parameter.
+                        </li>
+                        <li><b>requestAnimationFrame: </b><br>
+                            These include making the most of the browser's built-in graphics-handling capabilities, and not running the animation when the tab is inactive, resulting in a much smoother performance. 
+                        </li>
+                    </ul>
+                </li>
+                <li><b>HTML5</b> 
+                    <ul>
+                        <li><b>The data- Attribute</b><br>
+                            The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser.
+                            The names of these attributes can be decided by the developer, but they must use the following format:
+                            <ul>
+                                <li>Start with data-.</li>
+                                <li>Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.</li>
+                                <li>Include an optional string value.</li>
+                            </ul>
+                            Each element has a dataset property that can be used to access any data- attributes it contains. Here's an example of some markup.
+                        </li>
+                        <li><b>HTML5 Web Storage</b><br>
+                            The Web Storage API provides a key-value store on the client's computer that is similar to using cookies but has fewer restrictions.
+                            localStorage.setItem('name', 'Walter White');
+                        </li>
+                        <li><b>Geolocation</b><br>
+                            The Geolocation API is used to obtain the geographical position of the device.
+                        </li>
+                        <li><b>Web Workers</b><br>
+                            Web workers allow processes to be run in the background, adding support for concurrency in JavaScript. 
+                        </li>
+                        <li><b>Websockets</b><br>
+                            Websocket is a new protocol that allows two-way communication with a server, also known as push messaging. This means that a connection is kept open and responses are 'pushed' to the client as soon as they are received.
+                        </li>
+                        <li><b>Notifications</b><br>
+                            The Notification API allows you to show messages using the system's notifications. This is usually a popup in the corner of the screen, but it changes depending on the operating system.
+                        </li>
+                        <li><b>Multimedia</b><br>
+                            HTML5 introduced the <audio> and <video> tags used to insert audio and video clips into a web page. It also introduced a Media API for controlling the playback of the clips using JavaScript.
+                        </li>
+                        <li><b>Shims and Polyfills</b><br>
+                            These are libraries of code that allow you to use the APIs as usual. They then fill in the necessary code that's not provided natively by the user's browser.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Questions</h3>
+            <ul>
+                <li>What is better, cookies or local storage?</li>
+                <li>What is the difference between asynchronous functions, promises, and workers?</li>
+            </ul>
+    </main>
+    <footer>
+        <p >
+            &copy; <span id="currentyear"></span> .:|:. Victor M. Lopez .:|:. Colombia 
+        </p>
+        <p>
+            Last Updated: <span id="currentdate"></span>
+        </p>
+    </footer>
+</body>
+</html>
