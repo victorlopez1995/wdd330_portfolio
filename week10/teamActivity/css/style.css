@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+header, main {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+header{
+    text-align: center;
+}
+header ul li{
+    display: inline-block;
+    margin: 1rem;  
+}
+main h1 {
+    margin: 1rem;
+}
+main>section>ul {
+    list-style-type: none;
+}
+main>section>ul>li{
+ padding: 0.5rem;
+ border: 0.1rem solid black;
+ border-bottom: none;
+}
+main>section>ul>li:last-child{
+    border-bottom: 0.1rem solid black   ;
+}
+main>section>ul>li:nth-child(even){
+    background-color: rgb(174, 219, 191);
+}

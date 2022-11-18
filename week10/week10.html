@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio week 10</title>
+    <meta name="description" content="Assignment portal for Victor Lopez in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/medium.css">
+    <script src="../js/date.js" defer></script>
+</head>
+<body>
+    <header>
+        <img alt="my personal photo" src="../images/my-page-image.jpg">
+        <h1>Victor M. Lopez</h1>
+    </header>
+    <main>
+        <h2>WDD 330: Portfolio - Week 10</h2>
+            <h3>Team Activity</h3>
+            <ul>
+                <li><a href="teamActivity/index.html">Quake List</a></li>
+            </ul>
+            <h3>Notes-Exercises</h3>
+            <ul>
+                <li><a href="examples/form-message.html">JavaScript validation</a></li>
+                <li><a href="examples/fruit-start.html">Form with validation</a></li>
+                <li><b>Client-side form validation <br></b>
+                    Client-side validation is an initial check and an important feature of good user experience; by catching invalid data on the client-side, the user can fix it straight away.                     
+                     <ul>
+                                <li><b>What is form validation?</b><br>
+                                    When you enter data, the browser and/or the web server will check to see that the data is in the correct format and within the constraints set by the application. If the information isn't correctly formatted, it gives the user an error message explaining what needs to be corrected, and lets them try again.
+                                </li>
+                                <li><b>Different types of client-side validation</b><br>
+                                    <ul>
+                                        <li>Built-in form validation uses HTML form validation features. This validation generally doesn't require much JavaScript.</li>
+                                        <li>JavaScript validation is coded using JavaScript. This validation is completely customizable.</li>
+                                    </ul>
+                                </li>
+                                <li><b>validation attributes</b><br>
+                                    <ul>
+                                        <li>required: Specifies whether a form field needs to be filled in before the form can be submitted. When this attribute is set, the element matches the :required UI pseudo-class and the form won't submit.</li>
+                                        <li>minlength and maxlength: Specifies the minimum and maximum length of textual data (strings).</li>
+                                        <li>min and max: Specifies the minimum and maximum values of numerical input types.</li>
+                                        <li>type: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
+                                        <li>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow. If a non-empty value of the input doesn't match the regular expression's pattern, the input will match the :invalid pseudo-class.</li>
+                                    </ul>
+                                </li>
+                                <li>When an element is valid, the following things are true: <br>
+                                    <ul>
+                                        <li>The element matches the :valid CSS pseudo-class</li>
+                                        <li>If the user tries to send the data, the browser will submit the form.</li>
+                                    </ul>
+                                </li>
+                                <li>When an element is invalid, the following things are true: <br>
+                                    <ul>
+                                        <li>The element matches the :invalid CSS pseudo-class.</li>
+                                        <li>If the user tries to send the data, the browser will block the form and display an error message.</li>
+                                    </ul>
+                                </li>
+                            
+                       
+                        <li><b>The Constraint Validation API</b> <br>
+                                Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces.
+                                <ul>
+                                        <li>HTMLButtonElement (represents a button element)</li>
+                                        <li>HTMLFieldSetElement (represents a fieldset element)</li>
+                                        <li>HTMLInputElement (represents an input element)</li>
+                                        <li>HTMLOutputElement (represents an output element)</li>
+                                        <li>HTMLSelectElement (represents a select element)</li>
+                                        <li>HTMLTextAreaElement (represents a textarea element)</li>
+                                </ul>
+                        </li>
+                        <li><b>Implementing a customized error message</b><br>
+                            These automated messages have two drawbacks:
+                            <ul>
+                                        <li>There is no standard way to change their look and feel with CSS.</li>
+                                        <li>They depend on the browser locale, which means that you can have a page in one language but an error message displayed in another language, as seen in the following Firefox screenshot.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><b>Using the Fetch API</b><br>
+                    The Fetch API provides a JavaScript interface for accessing and manipulating parts of the protocol, such as requests and responses.
+                    The simplest use of fetch() takes one argument — the path to the resource you want to fetch — and does not directly return the JSON response body but instead returns a promise that resolves with a Response object.
+                    <ul>
+                        <li><b>Sending a request with credentials included</b><br>
+                            To cause browsers to send a request with credentials included on both same-origin and cross-origin calls, add credentials: 'include' to the init object you pass to the fetch() method.
+                        </li>
+                        <li><b>Uploading JSON data</b><br>
+                            Use fetch() to POST JSON-encoded data.
+                        </li>
+                        <li><b>Uploading a file</b><br>
+                            Files can be uploaded using an HTML input type="file"  input element, FormData() and fetch().
+                        </li>
+                        <li><b>Supplying your own request object</b><br>
+                            Instead of passing a path to the resource you want to request into the fetch() call, you can create a request object using the Request() constructor, and pass that in as a fetch() method argument.    
+                        </li>
+                        <li><b>Headers</b><br>
+                            The Headers interface allows you to create your own headers object via the Headers() constructor. A headers object is a simple multi-map of names to values.
+                        </li>
+                        <li><b>Response objects</b><br>
+                            Response instances are returned when fetch() promises are resolved.
+                            <ul>
+                                <li>Response.status — An integer (default value 200) containing the response status code.</li>
+                                <li>Response.statusText — A string (default value ""), which corresponds to the HTTP status code message. Note that HTTP/2 does not support status messages.</li>
+                                <li>Response.ok — seen in use above, this is a shorthand for checking that status is in the range 200-299 inclusive. This returns a boolean value.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Questions</h3>
+            <ul>
+                <li>How to call a "fetch" created inside a function? I tried to call a function with a fetch in our team Activity, but it didn't work.</li>
+            </ul>
+    </main>
+    <footer>
+        <p >
+            &copy; <span id="currentyear"></span> .:|:. Victor M. Lopez .:|:. Colombia 
+        </p>
+        <p>
+            Last Updated: <span id="currentdate"></span>
+        </p>
+    </footer>
+</body>
+</html>
