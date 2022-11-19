@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblical Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/large.css">
+</head>
+<body>
+    <header>
+        <img src="https://placekitten.com/100/120" alt="Biblical Study Logo">
+        <h1>Biblical Study</h1>
+        <button id="SmallButton"><span>Search</span></button>
+        <form class="open">
+            <fieldset>
+                <legend>Testament</legend>
+                <label><input type="radio" name="testament" value="old">Old Testament</label>
+                <label><input type="radio" name="testament" value="new">New Testament</label>
+            </fieldset>
+            <label>Book<br>
+                <select type="text" id="book"  required></select>
+            </label>
+            <label>Enter chapter
+                <input type="text" id="chapter" placeholder="chapter" required>
+            </label>
+            <label>Enter verse <br>
+                <input type="text" id="verse" placeholder="verse" required>
+            </label>
+            <button>Search</button>
+        </form>
+    </header> 
+    <main>
+        <section>
+            <h1>Saved Passages</h1>
+            <div class="saved"></div>
+        </section>
+        <section>
+            <h1 class="titleQuote"></h1>
+            <p></p>
+            <button class="savedButton">Search</button>
+        </section>
+    </main>
+    <footer>
+        <p >
+            &copy; <span id="currentyear"></span> .:|:. Victor M. Lopez .:|:. Colombia 
+        </p>
+        <p>
+            Last Updated: <span id="currentdate"></span>
+        </p>
+    </footer>
+</body>
+</html>
