@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+html{
+    height: 100%;
+    scroll-behavior: unset;
+    -webkit-overflow-scrolling: unset;
+    font-family: 'Indie Flower', cursive;
+}
+html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative;
+  }
+main{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgb(18, 18, 48);
+    transition: all 7s;
+}
+.moon{
+    width: 25vw;
+    position: absolute;
+    left: 15vw;
+    top: 15vw;
+    transition: top 6s;
+}
+.sun{
+    width: 25vw;
+    position: absolute;
+    left: 35vw;
+    top: 65vh;
+    transition: top 6s;
+}
+.star{
+    opacity: 100;
+    transition: all 7s;
+}
+.star1{
+    width: 3vw;
+    position: absolute;
+    left: 3vw;
+    top: 15vh;
+}
+.star2{
+    width: 3vw;
+    position: absolute;
+    left: 30vw;
+    top: 22vh;
+}
+.star3{
+    width: 3vw;
+    position: absolute;
+    left: 90vw;
+    top: 5vh;
+}
+.star4{
+    width: 3vw;
+    position: absolute;
+    left: 60vw;
+    top: 30vh;
+}
+.star5{
+    width: 3vw;
+    position: absolute;
+    left: 42vw;
+    top: 8vh;
+}
+.star6{
+    width: 3vw;
+    position: absolute;
+    left: 53vw;
+    top: 19vh;
+}
+.star7{
+    width: 3vw;
+    position: absolute;
+    left: 7vw;
+    top: 4vh;
+}
+.star8{
+    width: 3vw;
+    position: absolute;
+    left: 85vw;
+    top: 30vh;
+}
+.star9{
+    width: 3vw;
+    position: absolute;
+    left: 64vw;
+    top: 5vh;
+}
+.star10{
+    width: 3vw;
+    position: absolute;
+    left: 15vw;
+    top: 40vh;
+}
+.mountain{
+    position: absolute;
+    bottom: -5vh;
+    z-index: 5;
+}  
+.nube{
+    opacity: 0;
+    transition: all 9s;
+} 
+.nube1{
+    z-index: 2;
+    width: 18vw;
+    position: absolute;
+    left: 39vw;
+    top: 3vh;
+}
+.nube2{
+    z-index: 2;
+    width: 18vw;
+    position: absolute;
+    left: 5vw;
+    top: 7vh;
+}
+.nube3{
+    z-index: 2;
+    width: 18vw;
+    position: absolute;
+    left: 80vw;
+    top: 7vh;
+}
+.mensaje{
+    position: absolute;
+    left: 15vw;
+    top: 80vh;
+    font-size: 20px;
+    transition: top 9s;
+}
+h1{
+    position: absolute;
+    left: 15vw;
+    top: 80vh;
+    transition: top 14s;
+}
+.tocar{
+    position: absolute;
+    left: 8vw;
+    top: 80vh;
+    font-size: 20px;
+    transition: top 17s; 
+}
+/*---------------------------------------------*/
+.star.morning{
+    opacity: 0;
+}
+main.morning{
+    background-color: rgb(174, 221, 225);
+}
+.moon.morning{
+    top: -15vh;
+}
+.sun.morning{
+    top: 30vh;
+}
+.nube.morning{
+    opacity: 100;
+}
+.mensaje.morning{
+    top: 16vh;
+}
+h1.morning{
+    top: 20vh;
+}
+.tocar.morning{
+    top: 28vh;
+}
+video{
+    display: none;
+}
+video.morming{
+    z-index: 10;
+    display: block;
+    position: absolute;
+    width: 90vw;
+    top: 50vh;
+    left: 5vw;
+}
