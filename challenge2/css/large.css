@@ -54,10 +54,10 @@
         background-color: rgba(255, 255, 255, .2);
     }
     .sectionShow{
-        max-height: 65vh;
+        height: 65vh;
     }
     .sectionSaved{
-        max-height: 65vh;
+        height: 65vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
