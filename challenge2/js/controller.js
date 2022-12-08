@@ -30,7 +30,7 @@ export default class BibleController {
       this.key = '1442de285190c454c247b6d0f9a0e1a1';
       this.lsKey = 'allVerses';
       this.testament = "";
-      this.bibleModel = new BibleModel("url");
+      this.bibleModel = new BibleModel();
       this.bibleView = new BibleView();
       this.bibleKeys = {
         'english': 'de4e12af7f28f599-02',
@@ -163,6 +163,7 @@ export default class BibleController {
     }
     renderSaveList(){
         if (this.bibleModel.verseArray != null){
+
             let index = 0;
             this.bibleModel.verseArray.forEach(element => {
                 const newLi = this.bibleView.createOneSaveVerse(element.name, element.url, this.saveParentElement, element.language);
@@ -177,13 +178,14 @@ export default class BibleController {
                 index ++;
             })
         }
+        this.bibleModel.verseArray = [];
 
     }
     addNewVerse(){
-        this.addButtonElement.addEventListener('click',(event)=>{
+
+        this.addButtonElement.addEventListener('click', (event)=>{
             console.log(this.pressed)
             if (this.pressed){
-                console.log(this.currentVerse);
                 this.bibleModel.addVersetoArray(this.currentVerse);
                 const newLi = this.bibleView.createOneSaveVerse(this.currentVerse.name, this.currentVerse.url,this.saveParentElement, this.currentVerse.language);
                 const pFormLi = newLi.children[0];
