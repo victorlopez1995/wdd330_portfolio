@@ -95,7 +95,7 @@ main>img{
     left: 15vw;
 }
 .nube3{
-    top: 50vh;
+    top: 40vh;
     left: -25vw;
 }
 .nube4{
@@ -120,7 +120,7 @@ main>img{
     animation: 35s linear normal infinite moveRight;
 }
 .nube3 {
-    animation: 37s linear normal 14s infinite moveRight;
+    animation: 60s linear normal infinite moveRight;
 }
 .nube4 {
     animation: 42s linear normal infinite moveRight;
