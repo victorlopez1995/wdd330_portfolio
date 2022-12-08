@@ -11,39 +11,67 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/small.css">
     <link rel="stylesheet" href="css/large.css">
+    <script src="js/main.js" type="module" defer></script>
+    <script src="js/controller.js" type="module" defer></script>
 </head>
 <body>
     <header>
-        <img src="https://placekitten.com/100/120" alt="Biblical Study Logo">
+        <img src="/challenge2/images/logo.png" alt="Biblical Study Logo">
         <h1>Biblical Study</h1>
-        <button id="SmallButton"><span>Search</span></button>
-        <form class="open">
-            <fieldset>
+        <button id="smallButton"><span>Search</span></button>
+        <form id="searchForm">
+            <fieldset class="selected">
                 <legend>Testament</legend>
                 <label><input type="radio" name="testament" value="old">Old Testament</label>
                 <label><input type="radio" name="testament" value="new">New Testament</label>
             </fieldset>
-            <label>Book<br>
+            <label>Book
                 <select type="text" id="book"  required></select>
             </label>
-            <label>Enter chapter
-                <input type="text" id="chapter" placeholder="chapter" required>
+            <label>Chapter
+                <input type="number" id="chapter" placeholder="1" required>
             </label>
-            <label>Enter verse <br>
-                <input type="text" id="verse" placeholder="verse" required>
+            <label>Verse
+                <input type="text" id="verse" placeholder="1/1-3/all" required>
             </label>
-            <button>Search</button>
+            <label>Language
+                <select type="text" id="language" required>
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="arabic">Arabic</option>
+                    <option value="german">German</option>
+                    <option value="italian">Italian</option>
+                </select>
+            </label>
+            <input type="submit" id="searchButton" name="submit" value="search"/>
         </form>
     </header> 
     <main>
-        <section>
-            <h1>Saved Passages</h1>
-            <div class="saved"></div>
+        <img src="images/Asset 1.png" class="nube1" alt="nube">
+        <img src="images/Asset 2.png" class="nube2" alt="nube">
+        <img src="images/Asset 3.png" class="nube3" alt="nube">
+        <img src="images/Asset 4.png" class="nube4" alt="nube">
+        <img src="images/Asset 1.png" class="nube5" alt="nube">
+        <section class="sectionSaved">
+            <h2>Saved Passages</h2>
+            <ul id="saved"></ul>
+            <label>Language <br>
+                <select type="text" id="languageSaved">
+                    <option value="all">All</option>
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="arabic">Arabic</option>
+                    <option value="german">German</option>
+                    <option value="italian">Italian</option>
+                </select>
+            </label>
         </section>
-        <section>
-            <h1 class="titleQuote"></h1>
-            <p></p>
-            <button class="savedButton">Search</button>
+        <section class="sectionShow">
+            <h2 class="titleQuote"></h2>
+            <div id="scriptureResult"></div>
+            <button id="addButton">Save</button>
         </section>
     </main>
     <footer>

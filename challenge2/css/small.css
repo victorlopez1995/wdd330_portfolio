@@ -6,20 +6,42 @@
 body {
 	font-size: 16px;
 	font-family: 'Lato', sans-serif;
+    background-color: #DCF3F9;
+}
+h1, h2{
+    font-family: 'Alegreya SC', serif;
+}
+h2{
+    font-size: 1.3rem;
+    text-align: center;
 }
 header, main, footer {
-	max-width: 1050px;
-	margin: 6pt auto;
+	max-width: 900px;
+	margin: 0 auto;
 }
 header{
-    background-color: antiquewhite;
     display: grid;
-    grid-template-columns: minmax(100px, 180px) 1fr;
+    align-items: center;
+    grid-template-columns: 1fr 5fr;
+}
+header h1{
+    margin: 0.5rem;
+}
+header>img{
+    margin: 0.5rem;
+    width: 10vw;
+    max-width: 60px;
+    justify-self: center;
+    align-self: center;
+
 }
 header>button{
+    font-family: 'Alegreya SC', serif;
+    font-size: 1.3rem;
     grid-column: 1/3;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(255, 255, 255, .8);
     border: none;
+    padding: 0.5rem;
 }
 header>button:hover{
     cursor: pointer;
@@ -27,5 +49,106 @@ header>button:hover{
 
 header>form {display: none;}
 header>form.open {
+    font-size: 0.9rem;
     display: block;
+    grid-column: 1/3;
+    background-color: rgba(255, 255, 255, .8);
+
+}
+header>form.open>fieldset{
+    margin: 0.6rem 1.2rem;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#book, #chapter, #verse, #language{
+    width: 100%;
+}
+
+header>form.open label select{
+    margin-top: 0.3rem;
+}
+header>form.open>label{
+    margin: 0.6rem 1.2rem;
+    display: block;
+}
+header>form.open>#searchButton{
+    display: block;
+    width: 50%;
+    margin: 0.6rem auto;
+    
+}
+/*--------------------------Main--------------------------------------*/
+main>img{
+    display: none;
+}
+.sectionShow{
+    min-height: 3rem;
+    position: relative;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 5px;
+}
+
+.sectionSaved{
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.sectionSaved #saved{
+    list-style: none;
+}
+.sectionSaved #saved li{
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    margin-top: 0.6rem;
+    padding: 0.5rem;
+}
+.sectionSaved #saved li:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.sectionSaved #saved li button{
+    width: 20px;
+    font-size: 0.7rem;
+    border-radius: 20px;
+}
+.sectionSaved label{
+    display: block;
+    text-align: center;
+    margin: 2rem 1rem;
+    margin-bottom: 0.5rem;
+}
+.sectionSaved label select{
+    width: 90%;
+    margin: 0.3rem;
+}
+.sectionSaved #saved li.hidden{
+    display: none;
+}
+
+#scriptureResult{
+    padding: 0.8rem;
+    padding-bottom: 2rem;
+}
+
+#scriptureResult>p>span{
+    margin: 0 1rem ;
+}
+.sectionShow>button{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+/*-------------------------------footer--------------------------------------------*/
+footer{
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 1px;
+    align-items: center;
+    margin-top: 1rem;
 }
