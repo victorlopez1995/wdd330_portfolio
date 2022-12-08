@@ -52,7 +52,6 @@ export default class BibleModel{
         this.setToLs(lsKey, this.verseArray);
     }
     addVersetoArray(element){
-        console.log(this.verseArray);
         this.verseArray.push(element);
     }
 }

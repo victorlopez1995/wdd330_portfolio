@@ -178,7 +178,6 @@ export default class BibleController {
                 index ++;
             })
         }
-        this.bibleModel.verseArray = [];
 
     }
     addNewVerse(){
