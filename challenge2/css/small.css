@@ -143,7 +143,11 @@ main>img{
     border-radius: 5px;
     border: 1px solid gray;
 }
+.sectionShow>button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
 
+}
 /*-------------------------------footer--------------------------------------------*/
 footer{
     text-align: center;
