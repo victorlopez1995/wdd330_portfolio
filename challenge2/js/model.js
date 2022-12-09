@@ -8,6 +8,9 @@ export default class BibleModel{
         this.oTBooks ={};
         this.nTBooks ={};
         this.verseArray =[];
+        this.lengthArrayChapter;
+        this.lengthArrayVerses;
+
       }
     getBook(book){
         if (book == 'old'){
@@ -36,6 +39,17 @@ export default class BibleModel{
         this.nTBooks = nTBooks;
         return booksArray;
     }
+    async getChaptersFromApi(book){
+        const url = 'https://api.scripture.api.bible/v1/bibles/de4e12af7f28f599-02/books/'+book+'/chapters';
+        const chapterArray = await this.getApiRequest(url, '1442de285190c454c247b6d0f9a0e1a1');
+        this.lengthArrayChapter = chapterArray.data.length - 1;
+    }
+    async getVersesFromApi(book, chapter){
+        const url = 'https://api.scripture.api.bible/v1/bibles/de4e12af7f28f599-02/chapters/'+book+'.'+chapter+'/verses';
+        const verseArray = await this.getApiRequest(url, '1442de285190c454c247b6d0f9a0e1a1');
+        this.lengthArrayVerses = verseArray.data.length;
+        
+    }
     setToLs(key, value){
         localStorage.setItem(key, JSON.stringify(value));
     }
@@ -44,6 +58,9 @@ export default class BibleModel{
     }
     getSavedList(key){
         this.verseArray = this.getFromLs(key);
+        if (this.verseArray == null){
+            this.verseArray = [];
+        }
         console.log (this.verseArray);
     }
     deleteVerseFromLs(id, lsKey){

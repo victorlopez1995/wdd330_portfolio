@@ -29,10 +29,10 @@
                 <select type="text" id="book"  required></select>
             </label>
             <label>Chapter
-                <input type="number" id="chapter" placeholder="1" required>
+                <input type="number" id="chapter" min="1" required>
             </label>
-            <label>Verse
-                <input type="text" id="verse" placeholder="1/1-3/all" required>
+            <label>Verse 1 / 1-3 / all
+                <input type="text" id="verse" required>
             </label>
             <label>Language
                 <select type="text" id="language" required>
@@ -56,7 +56,7 @@
         <section class="sectionSaved">
             <h2>Saved Passages</h2>
             <ul id="saved"></ul>
-            <label>Language <br>
+            <label>Filter By Language <br>
                 <select type="text" id="languageSaved">
                     <option value="all">All</option>
                     <option value="english">English</option>

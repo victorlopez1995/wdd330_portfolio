@@ -48,7 +48,7 @@ export default class BibleController {
       };
       this.pressed = false;
     }
-    Init(){
+    async Init(){
 
         this.parentElement = document.querySelector(this.parent);
         this.saveParentElement = document.querySelector(this.saveParent);
@@ -61,7 +61,10 @@ export default class BibleController {
         this.addButtonElement = document.querySelector(this.addButton);
         this.languageSavedElement = document.querySelector(this.languageSaved);
         this.bibleModel.getBooksFromApi();
+        this.setMaxChapter();
+        this.setMaxVerse();
         this.bibleModel.getSavedList(this.lsKey);
+        console.log(await this.bibleModel.getApiRequest('https://api.scripture.api.bible/v1/bibles/de4e12af7f28f599-02/chapters/1CO.1/verses', this.key))
         this.renderSaveList();
         this.addTestamentListener();
         this.addsearchListener();
@@ -87,6 +90,24 @@ export default class BibleController {
     }
     setBibleList(){
         this.bibleView.renderOptions(this.bibleBooksElement,this.books);
+    }
+    setMaxChapter(){
+        this.bibleBooksElement.addEventListener('change', async ()=>{
+            const book = this.bibleBooksElement.value;
+            await this.bibleModel.getChaptersFromApi(book);
+            this.bibleChapterElement.value = '';
+            this.bibleChapterElement.setAttribute('max', this.bibleModel.lengthArrayChapter);
+            this.bibleChapterElement.setAttribute('placeholder', `max ${this.bibleModel.lengthArrayChapter}`);
+        })
+    }
+    setMaxVerse(){
+        this.bibleChapterElement.addEventListener('input', async ()=>{
+            console.log('hola');
+            const book = this.bibleBooksElement.value;
+            const chapter = this.bibleChapterElement.value;
+            await this.bibleModel.getVersesFromApi(book, chapter);
+            this.bibleVerseElement.setAttribute('placeholder', `max ${this.bibleModel.lengthArrayVerses}`);
+        })
     }
     buildUrl(){
         const book = this.bibleBooksElement.value;

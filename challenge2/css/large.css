@@ -43,10 +43,10 @@
         width: 116px;
     }
     #chapter{
-        width: 50px;
+        width: 80px;
     }
     #verse{
-        width: 70px;
+        width: 95px;
     }
     main{
         display: grid;
